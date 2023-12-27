@@ -7,15 +7,13 @@
         <main id="main" class="site-main" role="main">
             <?php if(have_posts()): ?>
                 <?php while(have_posts()) : the_post(); ?>
-                    <?php get_template_part('template-parts/content')?>
+                    <?php get_template_part('template-parts/content', 'posts')?>
                 <?php endwhile; ?>
             <?php else: ?>
                 <?php get_template_part('template-parts/content', 'none')?>
             <?php endif; ?>
-
-            <?php echo paginate_links()?>
-
         </main>
+        home.php :D
     </div>
 
     <?php get_sidebar(); ?>

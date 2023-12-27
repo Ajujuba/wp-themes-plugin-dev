@@ -1,5 +1,4 @@
 <?php
-    #get_header('splash'); //As I created the header-splash.php file I can give the parameter to load my specific header on a specific page
     get_header();
 ?>
 
@@ -7,20 +6,17 @@
         <main id="main" class="site-main" role="main">
             <?php if(have_posts()): ?>
                 <?php while(have_posts()) : the_post(); ?>
-                    <?php get_template_part('template-parts/content')?>
+                    <?php get_template_part('template-parts/content', get_post_format())?>
                 <?php endwhile; ?>
             <?php else: ?>
                 <?php get_template_part('template-parts/content', 'none')?>
             <?php endif; ?>
-
-            <?php echo paginate_links()?>
-
+            <p>template single.php</p>
         </main>
     </div>
 
     <?php get_sidebar(); ?>
 
 <?php
-    #get_footer('splash');
     get_footer();
 ?>

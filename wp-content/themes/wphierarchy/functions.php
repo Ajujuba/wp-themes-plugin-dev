@@ -2,7 +2,6 @@
 
 add_theme_support('title-tag');
 add_theme_support('post-thubnails');
-add_theme_support('post_format', ['aside', 'gallery', 'link', 'images', 'quote', 'status', 'video', 'audio', 'chat']);
 add_theme_support('html5');
 add_theme_support('automatic-feed-links');
 add_theme_support('custom-header');
