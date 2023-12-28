@@ -1,7 +1,7 @@
 <?php
 
 add_theme_support('title-tag');
-add_theme_support('post-thubnails');
+add_theme_support('post-thumbnails');
 add_theme_support('html5');
 add_theme_support('automatic-feed-links');
 add_theme_support('custom-header');
@@ -44,3 +44,23 @@ function wphierarchy_widgets_init() {
     ]);  
 }
 add_action( 'widgets_init', 'wphierarchy_widgets_init' );
+
+function my_custom_post_types(){
+    #Portfolio post type
+    register_post_type('portfolio', [
+        'show_in_rest' => true, 
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'has_archive' => true,
+        'public' => true,
+        'labels' => [
+            'name' => 'Portfolios',
+            'show_in_rest' => true,
+            'add_new_item' => 'Add New Portfolio',
+            'edit_item' => 'Edit Portfolio',
+            'all_items' => 'All Portfolios',
+            'singular_name' => 'Portfolio'
+        ],
+        'menu_icon' => 'dashicons-awards'
+    ]);
+}
+add_action('init', 'my_custom_post_types');
