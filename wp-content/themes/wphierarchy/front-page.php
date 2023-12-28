@@ -13,7 +13,7 @@
                 <?php get_template_part('template-parts/content', 'none')?>
             <?php endif; ?>
         </main>
-        home.php :D
+        front-page.php :D
     </div>
 
     <?php get_sidebar(); ?>

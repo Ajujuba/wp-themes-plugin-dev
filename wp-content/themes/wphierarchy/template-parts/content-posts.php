@@ -4,7 +4,7 @@
         <a href="<?php the_permalink(); ?>">
             <h2><?php the_title() ?></h2>
             <div class="byline">
-                <?php esc_html_e('Author: '); the_author(); ?>
+                <?php esc_html_e('Author: '); the_author_posts_link(); ?>
             </div>
         </a>
     </header>
