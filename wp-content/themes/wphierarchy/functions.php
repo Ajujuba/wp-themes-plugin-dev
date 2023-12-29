@@ -12,9 +12,27 @@ add_theme_support('starter-content');
 
 //Load css
 function wphierarchy_enqueue_styles(){
+    //main css
     wp_enqueue_style('main-css', get_stylesheet_directory_uri() . '/style.css', [], time(), 'all');
+    
+    //Add custom css file
+    wp_enqueue_style('custom-css', get_stylesheet_directory_uri() . '/assets/css/custom.css', ['main-css'], time(), 'all');
+    wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+
 }
 add_action('wp_enqueue_scripts', 'wphierarchy_enqueue_styles');
+
+//Load js
+function wphierarchy_enqueue_scripts(){
+  
+    #main js without jQuery
+    //wp_enqueue_script('theme-js', get_stylesheet_directory_uri() . '/assets/js/theme.js', [], time(), true);
+    
+    #main js with jQuery
+    wp_enqueue_script('jquery-theme-js', get_stylesheet_directory_uri() . '/assets/js/jquery.theme.js', ['jquery'], time(), true);
+
+}
+add_action('wp_enqueue_scripts', 'wphierarchy_enqueue_scripts');
 
 //Register menu locations
 register_nav_menus([
@@ -61,6 +79,27 @@ function my_custom_post_types(){
             'singular_name' => 'Portfolio'
         ],
         'menu_icon' => 'dashicons-awards'
+    ]);
+
+    # Taxonomia 'skills' para o tipo de postagem 'portfolio'
+    register_taxonomy('skills', 'portfolio', [
+        'label' => 'Skills',
+        'rewrite' => ['slug' => 'skills'],
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'labels' => [
+            'name' => 'Skills',
+            'singular_name' => 'Skill',
+            'search_items' => 'Search Skills',
+            'all_items' => 'All Skills',
+            'parent_item' => 'Parent Skill',
+            'parent_item_colon' => 'Parent Skill:',
+            'edit_item' => 'Edit Skill',
+            'update_item' => 'Update Skill',
+            'add_new_item' => 'Add New Skill',
+            'new_item_name' => 'New Skill Name',
+            'menu_name' => 'Skills',
+        ],
     ]);
 }
 add_action('init', 'my_custom_post_types');

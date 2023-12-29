@@ -15,6 +15,10 @@
                         </a>
                         <?php the_content(); ?>
                         <p>
+                            Skills:
+                            <?php the_terms($post->ID, 'skills') ?>
+                        </p>
+                        <p>
                             <a class="button" href="#">
                                 <?php esc_html_e( 'Visit the Site', 'wphierarchy' ); ?>
                             </a>
