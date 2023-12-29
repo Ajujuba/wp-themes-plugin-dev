@@ -72,6 +72,10 @@ body {
     font-weight: bold;
     margin: 0 0 1rem 0;
   }
+
+  .site-content a{
+    text-decoration: underline;
+  }
   
   #masthead,
   footer.site-footer {
@@ -559,6 +563,10 @@ body {
   /* Do not show the outline on the skip link target. */
   #content[tabindex="-1"]:focus {
       outline: 0;
+  }
+
+  .wp-calendar-table{
+    background-color: rgb(153, 204, 236);
   }
   
   

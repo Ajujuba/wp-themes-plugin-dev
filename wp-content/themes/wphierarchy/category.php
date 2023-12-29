@@ -3,6 +3,7 @@
 ?>
 
     <div id="primary" class="content-area">
+        <h1><?php single_cat_title('Test archive tags Category: ')?></h1>
         <main id="main" class="site-main" role="main">
             <h1><?php the_archive_title()?></h1>
             <p><?php echo category_description()?></p>

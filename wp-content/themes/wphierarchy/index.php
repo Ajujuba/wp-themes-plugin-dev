@@ -4,6 +4,7 @@
 ?>
 
     <div id="primary" class="content-area">
+        <h1><?php single_post_title('Test achive tags Post: ')?></h1>
         <main id="main" class="site-main" role="main">
             <?php if(have_posts()): ?>
                 <?php while(have_posts()) : the_post(); ?>
