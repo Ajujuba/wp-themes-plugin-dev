@@ -4,7 +4,10 @@
         <a href="<?php the_permalink(); ?>">
             <h1><?php the_title() ?></h1>
             <div class="byline">
-                <?php esc_html_e('Author: '); the_author_posts_link(); ?>
+                Date: <?php the_time('F j, Y'); ?> |
+                <?php esc_html_e('Author: '); the_author_posts_link(); ?> |
+                <?php  esc_html_e('Category: '); the_category(' , ', ''); ?> |
+                <?php  esc_html_e('Tags: ');  the_tags(' , ', ''); ?>
             </div>
         </a>
     </header>

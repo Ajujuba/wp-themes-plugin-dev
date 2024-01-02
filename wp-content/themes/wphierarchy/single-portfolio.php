@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div id="primary" class="content-area extended">
         <main id="main" class="site-main" role="main">
-            <a href="<?php echo site_url('/portfolio')?>"> Back Portfolio </a>
+            <a href="<?php echo site_url('/portfolio'); ?>"> Back Portfolio </a>
             <hr>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>"  <?php post_class(); ?>>
@@ -11,7 +11,15 @@
 
                     <div class="entry-content">
                         <a href="<?php the_permalink(); ?>">
-                            <?php the_post_thumbnail( 'full' ); ?>
+                            <?php 
+                                if(has_post_thumbnail()){
+                                    $attr = [
+                                        'class' => 'test-ana',
+                                        'title' => get_the_title()
+                                    ]; // if you inspect the image in portfolio you can see this attributes in the tag img
+                                    the_post_thumbnail( 'full' , $attr);
+                                }
+                            ?>
                         </a>
                         <?php the_content(); ?>
                         <p>

@@ -5,6 +5,8 @@
             <h2><?php the_title() ?></h2>
             <div class="byline">
                 <?php esc_html_e('Author: '); the_author_posts_link(); ?>
+                <?php  esc_html_e('Category: '); the_category(' , ', ''); ?>
+                <?php  esc_html_e('Tags: ');  the_tags(' , ', ''); ?>
             </div>
         </a>
     </header>

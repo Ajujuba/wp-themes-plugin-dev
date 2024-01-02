@@ -31,6 +31,9 @@ function wphierarchy_enqueue_scripts(){
     #main js with jQuery
     wp_enqueue_script('jquery-theme-js', get_stylesheet_directory_uri() . '/assets/js/jquery.theme.js', ['jquery'], time(), true);
 
+    // if(is_singular() && comments_open()){
+    //     wp_enqueue_script('comment-reply');
+    // }
 }
 add_action('wp_enqueue_scripts', 'wphierarchy_enqueue_scripts');
 
@@ -103,3 +106,8 @@ function my_custom_post_types(){
     ]);
 }
 add_action('init', 'my_custom_post_types');
+
+// Comment Custom callback
+function wphierarchy_comment() {
+    get_template_part( 'comment' );
+}

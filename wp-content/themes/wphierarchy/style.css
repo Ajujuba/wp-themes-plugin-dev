@@ -76,6 +76,23 @@ body {
   .site-content a{
     text-decoration: underline;
   }
+
+  .area-custom-comment {
+    margin-bottom: 20px;
+  }
+  
+  .author-datas {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .personal-information {
+    margin-left: 20px;
+  }
+
+  .my-comment-area {
+    margin-left: 20px;
+  }
   
   #masthead,
   footer.site-footer {

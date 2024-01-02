@@ -8,7 +8,7 @@
     <?php 
 
         //wp_loginout(); //Show option to login / logout in sidebar
-        wp_loginout( get_permalink() ); //Show option to login / logout in sidebar and when I log I open my page and not my BO
+        wp_loginout(get_permalink()); //Show option to login / logout in sidebar and when I log I open my page and not my BO
 
         if(!is_user_logged_in()){
             $args = [
